@@ -1,22 +1,67 @@
-Your name
-Your netid
+Sarah Teixeira
+smt72
 
 Copy/Paste results from PercolationStats using PercolationDFS
-
+Did not run this test at the direction of Professor Astrachan. 
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
-
+simulation data for 20 trials
+grid	 mean	stddev	time
+100	 0.593	0.014	0.136
+200	 0.591	0.010	0.172
+400	 0.590	0.006	1.079
+800	 0.594	0.004	7.160
+Exception in thread "main" java.lang.StackOverflowError
 
 Copy/Paste results from PercolationStats using PercolationBFS
-
+simulation data for 20 trials
+grid 	mean	    stddev	time
+100	    0.593	0.014	0.102
+200	    0.591	0.010	0.214
+400	    0.590	0.006	1.199
+800	    0.594	0.004	8.787
+1600 	0.592	0.002	36.298
+3200 	0.593	0.001	205.625
 
 Copy/Paste results from PercolationStats using PercolationUF 
 with the QuickUWPC UnionFind implementation.
+simulation data for 20 trials
+grid	 mean	stddev	time
+100	 0.593	0.014	0.065
+200	 0.591	0.010	0.108
+400	 0.590	0.006	0.667
+800	 0.594	0.004	4.392
+1600	 0.592	0.002	24.897
+3200	 0.593	0.001	120.135
 
 1. How does doubling the grid size affect running time (keeping # trials fixed)
-
+Doubling the grid size increases the runtime by a non-linear amount. 
 
 2. How does doubling the number of trials affect running time.
+Doubling the number of trials approximately doubles the runtime, as seen here:
 
+simulation data for 40 trials
+grid	 mean	stddev	time
+100	 0.594	0.015	0.108
+200	 0.591	0.009	0.184
+400	 0.591	0.005	1.359
+800	 0.593	0.004	8.866
+1600 0.593	0.002	49.331
+3200 0.593	0.001	256.192
 
-3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+In the case of an 800 grid size, when 20 trials were done it took 4.382 
+seconds and when 40 trials were done it took 8.866 seconds. This is approx-
+imately doubling the run time.
+
+3. Estimate the largest grid size you can run in 24 hours with 20 trials. 
+Explain your reasoning.
+
+First, I determined that there are 86,400 seconds in a day.
+Then, I put the information into an excel sheet and created a chart with 
+y being equal to time and x being equal grid size. 
+I found a trendline from this: y = 1E-05x2 - 0.007x + 0.9393
+I plugged the amount of seconds available into the equation as y, then solved
+for x. 
+x is approximately equal to 93301.8.
+But since the grid size has to be a whole number, the largest grid size you
+can run in 24 hours with 20 trials is 93301.
